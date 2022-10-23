@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'crm/base.html' %}
+{% block content %}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Maverick Food Services</title>
+    </head>
+    <body class="bodylist">
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Welcome!</div>
+            <div class="panel-body">
+                Here you will find the club you like!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Club Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover w-auto">
+            <thead>
+            <tr class="bg-info">
+                <th>Club Name</th>
+                <th>Club Role</th>
+                <th>Club Category</th>
+                <th>Club Description</th>
+                <th>Created　Date</th>
+                <th colspan="4">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for club in clubs %}
+                <tr>
+                    <td>{{ club.club_name }}</td>
+                    <td>{{ club.club_role }}</td>
+                    <td>{{ club.club_category }}</td>
+                    <td>{{ club.club_description }}</td>
+                    <td>{{ club.created_date }}</td>
+                    <td><a href="{% url 'crm:club_edit' pk=club.pk %}"
+                           class="btn btn-warning">Edit</a>
+                    <td><a href="{% url 'crm:club_delete' pk=club.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+</html>
+

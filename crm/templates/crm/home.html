@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'crm/base.html' %}
+{% load static %}
+{% block content %}
+    <body>
+    {% if user.is_authenticated %}
+        <div class="page-container">
+            <h2 class="top-menu">Welcome {{ user.username }},</h2>
+            <p>Find your home on campus.</p>
+        </div>
+    {% else %}
+        <p>Find your home on campus.</p>
+    {% endif %}
+    <div class="content container">
+        <!-- Example row of columns using cards for alignment
+             The value of 'col-md-x' for all columns in the row must add up to 12
+             This page has 3 columns, each column uses col-md-4, for a total of 12 -->
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static "images/arts.jpeg" %}" class="card-img-top" alt="Student">
+                    <div class="card-body">
+                        <h5 class="card-title">Students</h5>
+                        <p class="card-text">Students Home.</p>
+                        <p><a class="btn btn-primary" href="{% url 'crm:student_list' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static "images/bell.jpeg" %}" class="card-img-top" alt="Event">
+                    <div class="card-body">
+                        <h5 class="card-title">Events</h5>
+                        <p class="card-text">New Events Everyday</p>
+                        <p><a class="btn btn-primary" href="{% url 'crm:event_list' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static "images/ed.jpeg" %}" class="card-img-top" alt="clubs">
+                    <div class="card-body">
+                        <h5 class="card-title">Clubs</h5>
+                        <p class="card-text">Check Out Our Clubs</p>
+                        <p><a class="btn btn-primary" href="{% url 'crm:club_list' %}"
+                              role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+</html>
