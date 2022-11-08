@@ -1,9 +1,97 @@
+ body
+ {
+   font-size: 90%;
+   border: 0px;
+   margin: 0px;
+   padding: 1em;
+   background-color: #FFEFD5;
+   }
 
-body {
-    padding-left: 15px;
+ul {
+         list-style-type: none;
+   margin: 0;
+  padding: 0;
+  width: 60px;
 }
 
-h1 a {
-    color: #FCA205;
-    font-family: 'cursive';
+{
+color: 	#696969;
+
 }
+#nav
+{
+ background-color: 	#F5F5DC ;
+
+}
+#oblivion
+{
+
+ color: black;
+}
+
+#Dogma
+{
+color: 	#8B0000;
+
+}
+li a {
+	  display: block;
+
+
+  }
+  div
+  {
+  border: thin dashed red;
+  border-radius: 15px;
+  background-color: #B0C4DE;
+  width: 650px;
+  margin: 20px;
+
+
+
+  }
+
+  h1
+  {
+  font-variant: small-caps;
+  text-align: center;
+  border: 1px;
+}
+
+  p
+  {
+    font-family: 'arial',sans-serif;
+
+
+  }
+
+  img.left
+ {
+  float: left;
+  padding: 15px;
+  }
+
+  #validator
+  {
+  margin: 100px;
+  padding: 5px;
+  width : 650px;
+  }
+
+  a
+  {
+	 font-family: 'arial',sans-serif;
+	 color: blue;
+	 text-decoration: none;
+  }
+
+  a:link
+  {
+  font-weight: bold;
+  }
+
+  a:hover
+  {
+  background-color: black;
+  color: #00FFFF;
+  }
