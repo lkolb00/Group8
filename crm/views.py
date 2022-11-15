@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
+from .forms import SignUpForm
 
 now = timezone.now()
 
@@ -100,3 +101,4 @@ def club_delete(request, pk):
 
 # events = Event.objects.filter(created_date__lte=timezone.now())
     #return render(request, 'crm/event_list.html', {'events': events})
+
