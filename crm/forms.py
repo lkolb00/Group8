@@ -1,6 +1,7 @@
 from django import forms
 from .models import Student, Event, Club
 
+
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
@@ -16,3 +17,4 @@ class ClubForm(forms.ModelForm):
     class Meta:
         model = Club
         fields = ( 'club_name', 'club_role', 'club_category', 'club_description', 'created_date')
+

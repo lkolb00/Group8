@@ -2,6 +2,7 @@
 <html lang="en">
 {% extends 'crm/base.html' %}
 {% load static %}
+
 {% block content %}
     <body>
     {% if user.is_authenticated %}
@@ -35,8 +36,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Events</h5>
                         <p class="card-text">New Events Everyday</p>
-                        <p><a class="btn btn-primary" href="{% url 'crm:event_list' %}"
+                         <p><a class="btn btn-primary" href="{% url 'crm:event_list' %}"
                               role="button">View details &raquo;</a></p>
+
                     </div>
                 </div>
             </div>
