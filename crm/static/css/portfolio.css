@@ -1,96 +1,39 @@
- body
- {
-   font-size: 90%;
-   border: 0px;
-   margin: 0px;
-   padding: 1em;
-   background-color: #FFEFD5;
-   }
-
-ul {
-         list-style-type: none;
-   margin: 0;
-  padding: 0;width: 60px;
+/*****
+Webpage edits
+******/
+body {
+    padding-left: 15px;
+}
+/******
+Heading
+*******/
+header {
+    float: left;
+    margin: 0 0 25px 0;
+    width: 100%;
+}
+h1 a {
+    float: center;
+    color: #FCA205;
+    font-family: 'cursive';
 }
 
-{
-color: 	#696969;
+h2 {
+    float: center;
+    color: #FCA205;
+    font-family: 'cursive';
+    font-weight: semi Bold;
+
 
 }
-#nav
-{
- background-color: 	#F5F5DC ;
-
+h3 {
+    float: left;
+    color: #FCA205;
+    font-family: 'cursive';
+    font-size: 2.00em;
 }
-#oblivion
-{
-
- color: black;
+h4 {
+    float: center;
+    font-family: 'arial';
+    font-size: 1.25em;
 }
-
-#Dogma
-{
-color: 	#8B0000;
-
-}
-li a {
-	  display: block;
-
-
-  }
-  div
-  {
-  border: thin dashed red;
-  border-radius: 15px;
-  background-color: #B0C4DE;
-  width: 650px;
-  margin: 20px;
-
-
-
-  }
-
-  h1
-  {
-  font-variant: small-caps;
-  text-align: center;
-  border: 1px;
-}
-
-  p
-  {
-    font-family: 'arial',sans-serif;
-
-
-  }
-
-  img.left
- {
-  float: left;
-  padding: 15px;
-  }
-
-  #validator
-  {
-  margin: 100px;
-  padding: 5px;
-  width : 650px;
-  }
-
-  a
-  {
-	 font-family: 'arial',sans-serif;
-	 color: blue;
-	 text-decoration: none;
-  }
-
-  a:link
-  {
-  font-weight: bold;
-  }
-
-  a:hover
-  {
-  background-color: black;
-  color: #00FFFF;
-  }
