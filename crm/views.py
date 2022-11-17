@@ -4,21 +4,21 @@ from .models import *
 from .forms import *
 from .forms import UserRegistrationForm
 
+
+
 now = timezone.now()
 
 def register(request):
     if request.method == 'POST':
-        user_form = UserRegistrationForm(request.POST)
-        if user_form.is_valid():
-            new_user = user_form.save(commit=False)
-            new_user.set_password( user_form.cleaned_data['password'])
+        student_form = UserRegistrationForm(request.POST)
+        if student_form.is_valid():
+            new_user = student_form.save(commit=False)
+            new_user.set_password(student_form.cleaned_data['password'])
             new_user.save()
             return render(request, 'registration/register_done.html', {'new_user': new_user})
     else:
-        user_form = UserRegistrationForm()
-    return render(request, 'registration/register.html', {'user_form': user_form})
-
-
+        student_form = UserRegistrationForm()
+    return render(request, 'registration/register.html', {'student_form': student_form})
 
 
 def home(request):

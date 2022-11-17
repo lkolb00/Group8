@@ -1,8 +1,11 @@
 from django.db import models
 from django.utils import timezone
 
+
 #Define the model for the Customer table
 class Student(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
     student_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=20)
