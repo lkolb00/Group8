@@ -43,3 +43,5 @@ class Club(models.Model):
 
     def __str__(self):
         return str(self.club_name)
+
+
