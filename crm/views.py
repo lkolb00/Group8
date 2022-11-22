@@ -2,15 +2,30 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
+from .forms import UserRegistrationForm
+
+
 
 now = timezone.now()
+
+def register(request):
+    if request.method == 'POST':
+        student_form = UserRegistrationForm(request.POST)
+        if student_form.is_valid():
+            new_user = student_form.save(commit=False)
+            new_user.set_password(student_form.cleaned_data['password'])
+            new_user.save()
+            return render(request, 'registration/register_done.html', {'new_user': new_user})
+    else:
+        student_form = UserRegistrationForm()
+    return render(request, 'registration/register.html', {'student_form': student_form})
+
 
 def home(request):
     return render(request, 'crm/home.html',
                   {'crm': home})
 
 @login_required
-
 def student_list(request):
     student = Student.objects.filter()
     return render(request, 'crm/student_list.html',
@@ -69,6 +84,8 @@ def event_delete(request, pk):
 
 
 
+
+@login_required
 def club_list(request):
     club = Club.objects.filter()
     return render(request, 'crm/club_list.html',
@@ -98,5 +115,3 @@ def club_delete(request, pk):
     return redirect('crm:club_list')
 
 
-# events = Event.objects.filter(created_date__lte=timezone.now())
-    #return render(request, 'crm/event_list.html', {'events': events})
