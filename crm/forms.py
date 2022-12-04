@@ -12,12 +12,12 @@ class StudentForm(forms.ModelForm):
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ( 'event_name', 'event_category', 'description', 'location', 'event_date','event_time')
+        fields = ( 'event_name', 'event_category', 'description', 'location', 'event_date')
 
 class ClubForm(forms.ModelForm):
     class Meta:
         model = Club
-        fields = ( 'club_name', 'club_role', 'club_category', 'club_description', 'created_date')
+        fields = ( 'club_name', 'club_category', 'club_description', 'created_date')
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)

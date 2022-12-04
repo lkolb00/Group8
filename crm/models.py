@@ -24,13 +24,11 @@ class Event(models.Model):
     description = models.TextField()
     location = models.CharField(max_length=200)
     event_date = models.DateTimeField(default=timezone.now)
-    event_time = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return str(self.event_name)
 
 class Club(models.Model):
     club_name = models.CharField(max_length=100)
-    club_role = models.CharField(max_length=20)
     club_category = models.CharField(max_length=100)
     club_description = models.TextField()
     created_date = models.DateTimeField(
