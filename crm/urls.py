@@ -1,5 +1,8 @@
 from . import views
 from django.urls import path, re_path
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
+
 
 app_name = 'crm'
 urlpatterns = [
@@ -14,4 +17,7 @@ urlpatterns = [
     path('event/<int:pk>/delete/', views.event_delete, name='event_delete'),
     path('club/<int:pk>/edit/', views.club_edit, name='club_edit'),
     path('club/<int:pk>/delete/', views.club_delete, name='club_delete'),
+    path('register/', views.register, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+
 ]
