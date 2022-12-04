@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Student, Event, Club
 
+
 #Define the admin options for the Customer table
 class StudentList(admin.ModelAdmin):
     list_display = ( 'student_name', 'phone' )

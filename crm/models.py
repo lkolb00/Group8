@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django import forms
 
 
+role_choice = [('student', 'Students')]
 #Define the model for the Customer table
 class Student(models.Model):
     username = models.CharField(max_length=50)
@@ -36,4 +38,5 @@ class Club(models.Model):
 
     def __str__(self):
         return str(self.club_name)
+
 
