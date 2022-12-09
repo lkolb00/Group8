@@ -20,13 +20,14 @@
     </div>
     <div class="row">
         <h2>Club Information</h2>
+        <td>  <a href="http://127.0.0.1:8000/admin/crm/club/add/"><span
+                class="btn btn-primary">Add Club</span></a></td>
     </div>
     <div>
         <table class="table table-striped table-bordered table-hover w-auto">
             <thead>
             <tr class="bg-info">
                 <th>Club Name</th>
-                <th>Club Role</th>
                 <th>Club Category</th>
                 <th>Club Description</th>
                 <th>Created　Date</th>
@@ -38,7 +39,6 @@
             {% for club in clubs %}
                 <tr>
                     <td>{{ club.club_name }}</td>
-                    <td>{{ club.club_role }}</td>
                     <td>{{ club.club_category }}</td>
                     <td>{{ club.club_description }}</td>
                     <td>{{ club.created_date }}</td>

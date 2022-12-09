@@ -6,6 +6,7 @@ from .forms import UserRegistrationForm
 
 
 
+
 now = timezone.now()
 
 def register(request):
@@ -13,7 +14,7 @@ def register(request):
         student_form = UserRegistrationForm(request.POST)
         if student_form.is_valid():
             new_user = student_form.save(commit=False)
-            new_user.set_password(student_form.cleaned_data['password'])
+
             new_user.save()
             return render(request, 'registration/register_done.html', {'new_user': new_user})
     else:
@@ -113,5 +114,6 @@ def club_delete(request, pk):
     club = get_object_or_404(Club, pk=pk)
     club.delete()
     return redirect('crm:club_list')
+
 
 

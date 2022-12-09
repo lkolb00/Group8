@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: krahmanzai@unomaha.edu
+Date: Tue, 29 Nov 2022 18:44:52 -0000
+Message-ID: <166974749225.43983.2022133244272378000@1.0.0.127.in-addr.arpa>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/NQ/bfni2s-d73b14b642dfd81942fecef8a80c58eb/
+
+Your username, in case you’ve forgotten: kareemrahmanzai
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
