@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: krahmanzai092@gmail.com
+Date: Sun, 04 Dec 2022 19:51:01 -0000
+Message-ID: <167018346144.72353.373556803156322057@kabirs-air-2.unomaha.edu>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/NQ/bfwuh1-f61a0b778755ddb6737534e57d97b426/
+
+Your username, in case you’ve forgotten: kareem
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

@@ -3,58 +3,248 @@
 {% extends 'crm/base.html' %}
 {% load static %}
 
+
+
 {% block content %}
-    <body>
-    {% if user.is_authenticated %}
-        <div class="page-container">
-            <h2 class="top-menu">Welcome {{ user.username }},</h2>
-            <h2>Find your home on campus.</h2>
-        </div>
-    {% else %}
-        <h2>Find your home on campus.</h2>
-    {% endif %}
-    <div class="content container">
-        <!-- Example row of columns using cards for alignment
-             The value of 'col-md-x' for all columns in the row must add up to 12
-             This page has 3 columns, each column uses col-md-4, for a total of 12 -->
-        <div class="row">
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="{% static "images/arts.jpeg" %}" class="card-img-top" alt="Student">
-                    <div class="card-body">
-                        <h5 class="card-title">Students</h5>
-                        <p class="card-text">Students Home.</p>
-                        <p><a class="btn btn-primary" href="{% url 'crm:student_list' %}"
-                              role="button">View details &raquo;</a></p>
-                    </div>
-                </div>
+    <head>
+        <title>CSS Template</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="crm/static/css/w3.css" />
+
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <style>
+          body,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-family: "Montserrat", sans-serif;
+          }
+          .w3-row-padding img {
+            margin-bottom: 12px;
+          }
+          /* Set the width of the sidebar to 120px */
+          .w3-sidebar {
+            width: 120px;
+            background: #222;
+          }
+          /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+          #main {
+            margin-left: 120px;
+          }
+          /* Remove margins from "page content" on small screens */
+          @media only screen and (max-width: 600px) {
+            #main {
+              margin-left: 0;
+            }
+          }
+        </style>
+    </head>
+
+
+
+
+
+    <body class="w3-black">
+
+        <!-- Page Content -->
+        <div class="w3-padding-large" id="main">
+          <!-- Header/Home -->
+          <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo">
+              <span class="w3-hide-small">Maverick Gram ©</span>
+            </h1>
+            <p>
+              Maverick Gram, we are here to make your campus life a little bit
+              easier
+            </p>
+            <img
+              src="/crm/static/images/Mavericks.jpeg"
+              alt="Mavericks"
+              class="w3-image"
+              width="800"
+              height="1000"
+            />
+          </header>
+
+          <!-- About Section -->
+
+          <!-- Portfolio Section -->
+          <div class="w3-padding-64 w3-content" id="events">
+            <h2 class="w3-text-light-grey">Events</h2>
+            <hr style="width: 200px" class="w3-opacity" />
+
+            <!-- Grid for photos -->
+            <div class="w3-row-padding" style="margin: 0 -16px">
+              <div class="w3-half">
+            <img src="{% static "crm/static/images/bowling.jpeg" %}" alt="bowling_photo" style="width: 100%" />
+            <img src="{% static "crm/static/images/dodgeball.jpeg" %}" alt="dodgeball_photo" style="width: 100%"/>
+          </div>
+
+              <div class="w3-half">
+                <img src="/crm/static/images//movie.jpeg" alt="movie_photo" style="width: 100%" />
+                <img
+                  src="/crm/static/images//basketball.png"
+                  alt="basketball_photo"
+                  style="width: 100%"
+                />
+                <img src="/Users/aurora/Desktop/G8test/crm/static/images/bell.jpeg" alt="trivia_photo" style="width: 100%" />
+              </div>
+              <!-- End photo grid -->
+            </div>
+            <!-- End Portfolio Section -->
+          </div>
+
+          <!-- Contact Section -->
+          <div class="w3-padding-64 w3-content w3-text-grey" id="clubs">
+            <h2 class="w3-text-light-grey">Clubs</h2>
+            <hr style="width: 200px" class="w3-opacity" />
+
+            <!-- Grid for photos -->
+            <div class="w3-row-padding" style="margin: 0 -16px">
+              <div class="w3-half">
+                <img
+                  src="/crm/static/images//arthistory.png"
+                  alt="arthistory_club_photo"
+                  style="width: 100%"
+                />
+                <img
+                  src="/crm/static/images//bookclub.jpeg"
+                  alt="bookclub_photo"
+                  style="width: 100%"
+                />
+                <img src="/crm/static/images//chess.jpeg" alt="chess_photo" style="width: 100%" />
+              </div>
+
+              <div class="w3-half">
+                <!-- Right Half -->
+                <img src="/crm/static/images//math.jpeg" alt="math_photo" style="width: 100%" />
+                <img
+                  src="/crm/static/images//photo.jpeg"
+                  alt="photography_club_photo"
+                  style="width: 100%"
+                />
+                <img src="/crm/static/images//speech.jpeg" alt="speech_photo" style="width: 100%" />
+                <img
+                  src="/crm/static/images//Sculpture.jpeg"
+                  alt="sculpture_photo"
+                  style="width: 100%"
+                />
+              </div>
+              <!-- End photo grid -->
+            </div>
+            <!-- End Portfolio Section -->
+          </div>
+          <!-- My Account Information -->
+          <div class="w3-padding-64 w3-content w3-text-grey" id="my_account">
+            <h2 class="w3-text-light-grey">My Account Information</h2>
+            <hr style="width: 200px" class="w3-opacity" />
+
+            <div class="w3-section">
+              <p>
+                <i
+                  class="fa fa-address-card fa-fw w3-text-red w3-xxlarge w3-margin-right"
+                ></i>
+                My Account
+              </p>
+              <form action="/action_page.php" target="_blank">
+                <p>
+                  <input
+                    class="w3-input w3-padding-16"
+                    type="text"
+                    placeholder="Username"
+                    required
+                    name="Username"
+                  />
+                </p>
+                <p>
+                  <input
+                    class="w3-input w3-padding-16"
+                    type="text"
+                    placeholder="Email"
+                    required
+                    name="Email"
+                  />
+                </p>
+                <p>
+                  <input
+                    class="w3-input w3-padding-16"
+                    type="text"
+                    placeholder="New Password"
+                    required
+                    name="New_Password"
+                  />
+                </p>
+                <p>
+                  <input
+                    class="w3-input w3-padding-16"
+                    type="text"
+                    placeholder="Confirm Password"
+                    required
+                    name="Message"
+                  />
+                </p>
+                <p>
+                  <button
+                    class="w3-button w3-light-grey w3-padding-large"
+                    type="submit"
+                  >
+                    <i class="fa fa-paper-plane"></i> Make Change
+                  </button>
+                </p>
+              </form>
             </div>
 
-           <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="{% static "images/bell.jpeg" %}" class="card-img-top" alt="Event">
-                    <div class="card-body">
-                        <h5 class="card-title">Events</h5>
-                        <p class="card-text">New Events Everyday</p>
-                         <p><a class="btn btn-primary" href="{% url 'crm:event_list' %}"
-                              role="button">View details &raquo;</a></p>
+            <!-- End Contact Section -->
+          </div>
+          <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">Who are we?</h2>
+            <hr style="width: 200px" class="w3-opacity" />
+            <!-- Testimonials -->
+            <img
+              src="/crm/static/images//bull.png"
+              alt="Avatar"
+              class="w3-left w3-circle w3-margin-right"
+              style="width: 80px"
+            />
+            <p><span class="w3-large w3-margin-right">Maverick Gram©</span></p>
+            <p>We design your website</p>
+            <br />
+            <p>
+              MAVERICK GRAM application allowing all featured clubs, host to post
+              announcements, club events and news on this one single platform which
+              all students would have the access to. This program allows all users
+              to see what's going on campus without having to search for each school
+              related events individually on social media.
+              <!-- End About Section -->
+            </p>
+          </div>
 
-                    </div>
-                </div>
-            </div>
-           <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="{% static "images/ed.jpeg" %}" class="card-img-top" alt="clubs">
-                    <div class="card-body">
-                        <h5 class="card-title">Clubs</h5>
-                        <p class="card-text">Check Out Our Clubs</p>
-                        <p><a class="btn btn-primary" href="{% url 'crm:club_list' %}"
-                              role="button">View details &raquo;</a></p>
-                    </div>
-                </div>
-            </div>
+          <!-- Footer -->
+          <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <p class="w3-medium">Maverick Gram 2022©</p>
+            <!-- End footer -->
+          </footer>
+
+          <!-- END PAGE CONTENT -->
         </div>
-    </div>
     </body>
 {% endblock %}
 </html>

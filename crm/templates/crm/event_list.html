@@ -27,11 +27,10 @@
             <thead>
             <tr class="bg-info">
                 <th>Event Name</th>
-                <th>Event Category</th>
+                <th>Event Category (Club)</th>
                 <th>Event Description</th>
                 <th>Location</th>
                 <th>Event Date</th>
-                <th>Event Time</th>
                 <th colspan="2">Actions</th>
             </tr>
             </thead>
@@ -43,7 +42,6 @@
                     <td>{{ event.description }}</td>
                     <td>{{ event.location }}</td>
                     <td>{{ event.event_date }}</td>
-                    <td>{{ event.event_time }}</td>
                     <td><a href="{% url 'crm:event_edit' pk=event.pk %}"
                            class="btn btn-warning">Edit</a>
                     </td>

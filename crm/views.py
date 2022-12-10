@@ -6,6 +6,7 @@ from .forms import UserRegistrationForm
 
 
 
+
 now = timezone.now()
 
 def register(request):
@@ -113,5 +114,6 @@ def club_delete(request, pk):
     club = get_object_or_404(Club, pk=pk)
     club.delete()
     return redirect('crm:club_list')
+
 
 
