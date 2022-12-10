@@ -5,6 +5,11 @@
 
 {% block content %}
     <h2>Log In</h2>
+    {% if user.is_superuser %}
+        <p>Hello, admin.</p>
+    {% else %}
+        <p>Hello, ordinary visitor.</p>
+    {% endif %}
     {% if form.errors %}
         <p>
             Your username and password didn't match.
@@ -12,11 +17,7 @@
         </p>
 
     {% endif %}
-    {% if user.is_superuser %}
-        <p>Hello, admin.</p>
-    {% else %}
-        <p>Hello, ordinary visitor.</p>
-    {% endif %}
+
     <div class="login-form">
         <form action=""{% url 'login' %} method="post">
             {{ form.as_p }}
