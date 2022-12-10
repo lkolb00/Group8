@@ -4,25 +4,28 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<h2>Log In</h2>
-    {%  if form.errors %}
-    <p>
-    Your username and password didn't match.
-    Please try again.
-    </p>
+    <h2>Log In</h2>
+    {% if form.errors %}
+        <p>
+            Your username and password didn't match.
+            Please try again.
+        </p>
 
-    {%  endif %}
+    {% endif %}
+    {% if user.is_superuser %}
+        <p>Hello, admin.</p>
+    {% else %}
+        <p>Hello, ordinary visitor.</p>
+    {% endif %}
     <div class="login-form">
-     <form action=""{%  url 'login' %} method="post">
-         {{  form.as_p }}
-         {%  csrf_token %}
-         <input type="hidden" name="next" value="{{  next }}"/>
-         <p></p><input type="submit" value="Log-in"></p>
-     </form>
+        <form action=""{% url 'login' %} method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <p><input type="submit" value="Log-in"></p>
+        </form>
     </div>
 
     {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
-
-</form>
+    <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
 {% endblock content %}

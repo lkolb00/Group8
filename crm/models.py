@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django import forms
-
+from django.conf import settings
+from django.shortcuts import redirect
 
 
 #Define the model for the Customer table
@@ -38,7 +39,3 @@ class Club(models.Model):
 
     def __str__(self):
         return str(self.club_name)
-
-
-
-
